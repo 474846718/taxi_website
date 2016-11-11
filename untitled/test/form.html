@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        alert("yi开始就run");
+        function cb() {
+            alert("提交表单");
+            var i=1;
+            var a=3.1233;
+            var b=341;
+            var c=82.42;
+            var s='sdfaf';
+            var Array=[1,'s',true];
+            var r=c+i;
+            alert((r-b));
+        }
+        function cd() {
+            alert("hahahahhahaa");
+            for (var i=0;i<5;i++)
+            {
+                var total=i+1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="cb()" name="an_form" action="#" method="get">
+        User name: <input type="text" name="firstname"/><br/>
+        Password: <input type="password" name="pwd"/><br/>
+        <input type="radio" name="sex" value="male">Male<br/>
+        <input type="radio" name="sex" value="female">Female
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike<br/>
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <textarea rows="10" cols="30">lalalal</textarea>
+        <input type="button" value="Hello world!">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

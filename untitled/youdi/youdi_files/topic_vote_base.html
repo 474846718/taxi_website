@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>微博话题墙（话题组件）-基础版</title>
+        <link rel="stylesheet" type="text/css" href="topic_vote_base_data/weiboTopic.css">
+        <link rel="stylesheet" type="text/css" href="topic_vote_base_data/skin00.css">
+        <style type="text/css">
+            @charset "utf-8";
+             /*自定义颜色开始*/
+
+            /*边框颜色*/
+            .WB_widget .S_border {border-color:#cccccc;}
+            .WB_widget .S_border_c {color:#cccccc;}
+
+            /*左侧文字色*/
+            .WB_widget .main_part .S_text_l {color:#333333 !important;}
+
+            /*左侧链接色*/
+            .WB_widget .main_part a {color:#0078b6 !important;}
+
+            /*左侧背景色*/
+            .WB_widget .S_bg_l {background-color:#ffffff;}
+
+            /*左侧分隔线颜色*/
+            .WB_widget .S_separate_l {border-color:#cccccc;}
+
+            /*发布器的话题tab的背景色和文字色*/
+            .WB_widget .S_bg_tab {background-color:#e9f4fb !important;}
+            .WB_widget .S_c_tab {color:#0078b6 !important;}
+
+            /*发布器的话题tab，被选中的item的背景色*/
+            .WB_widget .topic_selected .S_bg_tab {background-color:#0078b6 !important;}
+            .WB_widget .topic_selected .S_c_tab {color:#e9f4fb !important;}
+
+
+            /*发布器的话题tab的，当前选中内容的箭头的颜色*/
+            /*注：link代表取色于链接色，l代表left，左侧链接色，b代表实际写的是border色*/
+            .WB_widget .S_link_l_b {border-top-color:#0078b6;}
+
+            /*展开的评论窗体的颜色*/
+            .WB_widget .S_bg_ex {background-color:#;}
+            .WB_widget .S_bg_ex_c {color:#;}
+
+            /*侧边栏（右侧）文字色*/
+            .WB_widget .aside_part {color:#333333 !important;}
+
+            /*侧边栏（右侧）链接色*/
+            .WB_widget .aside_part a{color:#0078b6 !important;}
+
+            /*侧边栏（右侧）背景色*/
+            .WB_widget .S_bg_r {background-color:#ffffff;}
+
+            /*侧边栏（右侧）分割线颜色*/
+            .WB_widget .S_separate_r {border-color:#cccccc;}
+
+            /*置顶微博颜色*/
+
+
+            /*自定义颜色结束*/
+        </style>
+        
+        <script charset="utf-8">
+            var $CONFIG = {
+                'refer' : '1',
+                'short_url' : 'http://t.cn/RUOfR6M',
+                'fuid' : '',
+                'is_sina_user' : '',
+                'app_src' : '1lzBEX',
+                'default_app_src' : '1lzBEX',
+                'tag' : '有滴打车',
+                'og' : 'http://www.njtoyo.com/Page/SinglePage.aspx?mid=10',
+                'appkey' : '838486247',
+                'default_appkey' : '838486247',
+                'language' : 'zh_cn',
+                'vsrc' : 'base_topic',
+                'wsrc': 'app_topic_base',
+                'block_key':'6410ed1f938f9a776da430c334f0e1f1',
+                'is_admin':'',
+                'current_user_weibo':'',
+                'current_user_sina':''
+            };
+        </script>
+        
+    </head>
+    <body style="margin:0;padding:0;">
+        <div class="WB_widget WB_weibo_topic   " style="width:1200px;">
+            <div class="top_color_line WB_xlinen"></div>
+            <div class="total_container S_border">
+                                <div class="frame_table_container">
+                    <table class="frame_table" cellspacing="0" cellpadding="0" border="0">
+                        <tbody><tr>
+                            <td class="main_part_td S_bg_l">
+                                <div class="main_part" style="width:1198px;" id="mainPart">
+                                    <div class="topic_publisher">
+                                        <div class="publisher_header">
+                                            <div class="user_login" id="pl_topic_login">
+                                                                                                <!-- 新浪用户二次注册时 -->
+                                                                                                <!-- 用户未登录时 -->
+                                                <u class="status_icon status_beginner"></u>
+                                                <a class="user_name" action-type="login" href="#" onclick="return false;" title="">登录</a>
+                                                <cite class="WB_vline">|</cite>
+                                                <a class="logout_link" action-type="regist" href="#" onclick="return false;" title="">注册</a>
+                                                                        
+                                                                    </div>
+                                        </div>
+                                        <div class="weibo_publisher" id="pl_topic_publisher">
+                                                                                        <div class="publisher_main">
+                                                <div class="publisher_textarea_container">
+                                                    <textarea class="publisher_textarea" node-type="textEl" range="26&amp;0">#有滴打车# http://t.cn/RUOfR6M</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="publisher_submit">
+                                                <div class="publisher_media">
+                                                    <a class="media_link" href="#" onclick="return false;" title="" node-type="smileyBtn"><u class="WB_ico_face"></u></a>
+                                                    <a class="media_link" href="#" onclick="return false;" title="" node-type="imageBtn"><u class="WB_ico_pic"></u></a>
+                                                    <a class="media_link" href="#" onclick="return false;" title="" node-type="topicBtn"><u class="WB_ico_topic"></u></a>
+                                                </div>
+                                                <div class="submit_btn_container">
+                                                    <cite class="weibo_count" node-type="count">135</cite>
+                                                    <a class="publisher_submit_btn" href="#" onclick="return false;" title="" node-type="publishBtn"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="weibo_feed S_text_l" id="pl_topic_viewpoint">
+                                        <!-- 搜索微博选择区域（全部、认证用户等） -->
+                                        <div class="feed_top_nav">
+                                            <div class="feed_nav_container">
+                                                <ul class="feed_nav_list" node-type="nav">
+                                                    <li class="feed_nav_item nav_width1_item nav_current" action-type="filter" action-data="index=0">
+                                                        <a class="feed_nav_item_a S_text_l" href="#" onclick="return false;" title="">全部</a>
+                                                        <!--表示当前的，红色弯曲线↓-->
+                                                        <!--现在默认是显示全部，需要通过一个filter判断↓-->
+                                                        <u class="nav_arrow S_bg_l"></u>
+                                                    </li>
+                                                    <li class="feed_nav_item nav_width2_item" action-type="filter" action-data="index=1">
+                                                        <a class="feed_nav_item_a S_text_l" href="#" onclick="return false;" title="">认证用户</a>
+                                                    </li>
+                                                    <li class="feed_nav_item nav_width2_item" action-type="filter" action-data="index=2">
+                                                        <a class="feed_nav_item_a S_text_l" href="#" onclick="return false;" title="">我关注的</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="weibo_all_link_container" node-type="count_info">
+                                                <a class="weibo_all_link" href="http://s.weibo.com/weibo/%E6%9C%89%E6%BB%B4%E6%89%93%E8%BD%A6&amp;scope=ori" target="_blank">查看224条相关微博</a>
+                                            </div>
+                                        </div>
+                                        <!-- 置顶微博区域 -->
+                                        <div node-type="feedlist">
+                                                                                        <div class="feed_list_container" node-type="scroll_list" style="height:600px;">
+                                                                                                <ul class="feed_list">
+                                                    <!-- 话题微博搜索结果显示区域 -->
+                                                                        
+                                                                        
+            <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/3973540229" target="_blank" title="一步一成长cs神1998"><img class="user_avatar" src="topic_vote_base_data/ecd76985jw8eospqdohtaj20dc0dcdgk.jpg" alt="一步一成长cs神1998" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/3973540229" target="_blank" title="一步一成长cs神1998">一步一成长cs神1998</a><cite class="user_words">：<a href="http://huati.weibo.com/k/%E5%BC%A0%E5%8D%9A%E7%90%85%E7%90%8A%E6%A6%9C2?from=601" target="_blank">#张博琅琊榜2#</a>历史剧琅琊榜2风起长林是大家谈论的焦点，这个好,还是张博琅琊榜2有魅力。</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/3973540229/EeTukzyrZ" target="_blank">10月28日 10:23</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1tqBja" rel="nofollow" target="_blank">360安全浏览器</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=4035498928473911" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=4035498928473911" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=4035498928473911" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/1227622151" target="_blank" title="函青"><img class="user_avatar" src="topic_vote_base_data/492c0707jw1e8qgp5bmzyj2050050aa8.jpg" alt="函青" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/1227622151" target="_blank" title="函青">函青</a><cite class="user_words">：【“有滴”满月 合乘功能受欢迎】&nbsp;&nbsp;&nbsp;&nbsp;晨报讯（记者&nbsp;张红）6月28日，南京本土打车平台“有滴打车”App&nbsp;正式上线，如今“有滴”满月，其生存状况如何？<a href="http://t.cn/RtXqkfm" target="_blank">http://t.cn/RtXqkfm</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1227622151/E1XQY6lk8" target="_blank">8月4日 09:35</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/12sA3H" rel="nofollow" target="_blank">WeiInf</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=4004684081511940" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=4004684081511940" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=4004684081511940" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/nanjinglive" target="_blank" title="直播南京官方版"><img class="user_avatar" src="topic_vote_base_data/6bbb3756jw8eyyyw4xykuj20e80e8t93.jpg" alt="直播南京官方版" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/nanjinglive" target="_blank" title="直播南京官方版">直播南京官方版</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：<a href="http://huati.weibo.com/k/%E6%9C%89%E5%A5%96%E4%BA%92%E5%8A%A8?from=601" target="_blank">#有奖互动#</a>
+ 
+昨天，网约车正式获得了官方认可，合法运营了。而在南京，一款功能齐全的官方打车软件“有滴打车”上线一个月运营惨淡，正规军暂时输给了“游击队”，您觉
+得是何原因？今后和滴滴、优步等其他网约车平台一样获得成功，还需要做哪些努力？评论并转发互动话题，您还有机会获得下周一开出的大</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1807431510/E165Sk2U4" target="_blank">7月29日 16:44</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/6vtZb0" rel="nofollow" target="_blank">微博 weibo.com</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=4002617564777724" title="">转
+发
+                                                                        
+                                                                        
+(25)
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=4002617564777724" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=4002617564777724" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(41)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/2690838854" target="_blank" title="红星闪闪的beibei"><img class="user_avatar" src="topic_vote_base_data/a062f146jw1e8qgp5bmzyj2050050aa8.jpg" alt="红星闪闪的beibei" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/2690838854" target="_blank" title="红星闪闪的beibei">红星闪闪的beibei</a><cite class="user_words">：第一次用有滴打车，还挺方便的。跟出租车公司都是直接挂钩的，司机和车都有保证。司机大哥也第一次接到有滴的单。 <a href="http://t.cn/RyhlN38" target="_blank">http://t.cn/RyhlN38</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/2690838854/E0ml5hlko" target="_blank">7月24日 20:15</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/3o33sO" rel="nofollow" target="_blank">iPhone 6</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=4000858754133564" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=4000858754133564" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=4000858754133564" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/yitgogo" target="_blank" title="易田农村电商"><img class="user_avatar" src="topic_vote_base_data/005GMrRVjw8f081j52f88j30dw0dw76c.jpg" alt="易田农村电商" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/yitgogo" target="_blank" title="易田农村电商">易田农村电商</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：
+【南京将上线官方约车平台“有滴”】继北京广州后，南京也将在本月上线自己的官方约车平台“有滴”，有消息称，目前该打车软件正在进行终端设备的安装及调
+试，预计月底前发布，目前在App Store 
+中已经可以找到这款APP。官方称在“有滴”平台上运行的所有车辆都是有合法运营资质的出租车，同时也能提供</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5212817147/DFxnf4KC1" target="_blank">7月19日 16:59</a><cite class="weibo_from">来自<a href="http://weibo.com/" rel="nofollow" target="_blank">微博 weibo.com</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3998997411132493" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3998997411132493" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3998997411132493" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5575295602" target="_blank" title="直播江苏"><img class="user_avatar" src="topic_vote_base_data/0065jn4Cjw8et82wb1bk2j306u06ugm2.jpg" alt="直播江苏" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5575295602" target="_blank" title="直播江苏">直播江苏</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve feed_icon"></span></a><cite class="user_words">：
+【“有滴”上线了，你会用吗？】今天起，南京本土网约车软件“有滴打车”正式上线！大家可以通过电话、手机APP、微信3种方式叫车，还可以预约用车、合
+乘拼车，合乘可分别计算价格并打印发票，支持现金、全国一卡通、市民卡、银联卡、微信及支付宝支付。网约车为黑色标致，出租车的价格享受专车待遇</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/7cfe0d62gw1f5aq8gqyokj20zk0qoafm.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5575295602/DEaVC6yjN" target="_blank">7月10日 18:00</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/4fuyNj" rel="nofollow" target="_blank">即刻笔记</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3995751321561891" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3995751321561891" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3995751321561891" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技"><img class="user_avatar" src="topic_vote_base_data/006ft7dXjw8eyiqflmhqmj313f13f7ie.jpg" alt="南京有滴科技" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技">南京有滴科技</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：《“有滴打车”-司机端安装及使用说明》 <a href="http://t.cn/R5RRaLt" target="_blank">http://t.cn/R5RRaLt</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5725381317/DCNvMsELd" target="_blank">7月1日 16:33</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/PBP2P" rel="nofollow" target="_blank">微博 weibo.com</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3992467906829871" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3992467906829871" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3992467906829871" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(2)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技"><img class="user_avatar" src="topic_vote_base_data/006ft7dXjw8eyiqflmhqmj313f13f7ie.jpg" alt="南京有滴科技" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技">南京有滴科技</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：《“有滴打车”-乘客端安装及使用说明》 <a href="http://t.cn/R5RRUik" target="_blank">http://t.cn/R5RRUik</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5725381317/DCNtIdNDR" target="_blank">7月1日 16:28</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/PBP2P" rel="nofollow" target="_blank">微博 weibo.com</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3992466623289091" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3992466623289091" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3992466623289091" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技"><img class="user_avatar" src="topic_vote_base_data/006ft7dXjw8eyiqflmhqmj313f13f7ie.jpg" alt="南京有滴科技" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5725381317" target="_blank" title="南京有滴科技">南京有滴科技</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：【视频：有滴打车宣传动画】 （分享自 <a target="_blank" href="http://weibo.com/n/%E4%BC%98%E9%85%B7">@优酷</a>） <a href="http://t.cn/R58lHla" target="_blank">http://t.cn/R58lHla</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5725381317/DCDVTw3mo" target="_blank">6月30日 16:10</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/4kiQYH" rel="nofollow" target="_blank">优酷土豆</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3992099697639416" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3992099697639416" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3992099697639416" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(2)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/jscity" target="_blank" title="南京零距离"><img class="user_avatar" src="topic_vote_base_data/3fac26acgw1f59jjrk1umj2050050aa5.jpg" alt="南京零距离" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/jscity" target="_blank" title="南京零距离">南京零距离</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：<a href="http://huati.weibo.com/k/%E5%8D%97%E4%BA%AC%E8%BA%AB%E8%BE%B9%E4%BA%8B?from=601" target="_blank">#南京身边事#</a>【“有
+滴”上线第二天 
+约车数量有点少】由南京市客管处牵头运行的本土约车软件“有滴打车”正式上线，新平台运行一天后，记者随机询问了6位出租车司机，没有一人做成“有滴打
+车”生意，大伙都说这订单量实在有点少。不少市民坦言处于观望状态。南京市出租车行业协会表示，将通过加大对出租</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/3fac26acgw1f5d0akxw4xj20ku0e9gnv.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1068246700/DCBwxFgow" target="_blank">6月30日 10:02</a><cite class="weibo_from">来自<a href="http://weibo.com/" rel="nofollow" target="_blank">微博 weibo.com</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3992007099834472" title="">转
+发
+                                                                        
+                                                                        
+(20)
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3992007099834472" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3992007099834472" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(99)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5484429724" target="_blank" title="小可爱的妈妈46867"><img class="user_avatar" src="topic_vote_base_data/005Za6HWjw8f5knnlp7lnj30ro0rpabu.jpg" alt="小可爱的妈妈46867" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5484429724" target="_blank" title="小可爱的妈妈46867">小可爱的妈妈46867</a><cite class="user_words">：我在看【南京约车平台“有滴打车”上线】  <a href="http://t.cn/R5QBMEG" target="_blank">http://t.cn/R5QBMEG</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5484429724/DCwEssDK3" target="_blank">6月29日 21:37</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/3hbfDa" rel="nofollow" target="_blank">新浪新闻客户端</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991819806825955" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991819806825955" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991819806825955" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/3498265964" target="_blank" title="高淳交通"><img class="user_avatar" src="topic_vote_base_data/d0834d6cjw1e8qgp5bmzyj2050050aa8.jpg" alt="高淳交通" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/3498265964" target="_blank" title="高淳交通">高淳交通</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：今天上午，南京市出租汽车网约车平台“有滴打车”APP正式上线了！<img src="topic_vote_base_data/pz_org.gif" title="拍照">小编带你了解一下<img src="topic_vote_base_data/vw_org.gif" title="威武"></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/d0834d6cgw1f5caizaf4qj208c08rdgc.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/3498265964/DCvzRk2ko" target="_blank">6月29日 18:53</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1tqBja" rel="nofollow" target="_blank">360安全浏览器</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991778514775512" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991778514775512" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991778514775512" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(2)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/knifelife" target="_blank" title="瘦皮皮的胖爹"><img class="user_avatar" src="topic_vote_base_data/6b39d5e1jw8f933epayyej20dw0e874t.jpg" alt="瘦皮皮的胖爹" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/knifelife" target="_blank" title="瘦皮皮的胖爹">瘦皮皮的胖爹</a><a href="http://club.weibo.com/intro" target="_blank"><span class="WB_ico_club feed_icon"></span></a><cite class="user_words">：暑气起，饿，进店要了牛肉锅贴二两，牛杂汤一碗，二十二。味道我给九分。墙上电视新闻，说南京官方出了「有滴打车」，体验不输滴滴。 <a href="http://t.cn/R4wkXU1" target="_blank">http://t.cn/R4wkXU1</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/6b39d5e1jw1f5cad3r9p4j20ku0ku43x.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1798952417/DCvy819sK" target="_blank">6月29日 18:49</a><cite class="weibo_from">来自<a href="http://weibo.com/" rel="nofollow" target="_blank">已脆屏的iPhone 6</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991777440274706" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991777440274706" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991777440274706" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/5780819935" target="_blank" title="别人眼中的我58110"><img class="user_avatar" src="topic_vote_base_data/006jdJldjw8eymrwf22f6j3014014dfm.jpg" alt="别人眼中的我58110" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/5780819935" target="_blank" title="别人眼中的我58110">别人眼中的我58110</a><cite class="user_words">：昨天，南京本地研发的手机打车软件“有滴打车”正式上线。<a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a>汇早点｜南京本土约车软件上线,鼓励拼车可开票,不搞打车券 <a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/006jdJldgw1f5c9xcape4j304k03kmx2.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/5780819935/DCvrdxjmN" target="_blank">6月29日 18:32</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1nDKmF" rel="nofollow" target="_blank">交汇点新闻</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991773157939273" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991773157939273" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991773157939273" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/itstar2011" target="_blank" title="米辰网络"><img class="user_avatar" src="topic_vote_base_data/a01a0e29jw1e8qgp5bmzyj2050050aa8.jpg" alt="米辰网络" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/itstar2011" target="_blank" title="米辰网络">米辰网络</a><a href="http://verified.weibo.com/verify" target="_blank"><span class="WB_approve_co feed_icon"></span></a><cite class="user_words">：
+【南京官方约车软件“有滴”上线】南京正式上线了自己的网络约车平台，这款名为“有滴”的网络约车平台由南京6大出租车公司：中北、江南、东方、大件、海
+博、外汽联合推出，而通过这个平台叫到的也只有出租车，约车价格也与出租车一致，还特别突出了拼车功能。且表示不会使用打车券进行推广。</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/a01a0e29jw1f5c6bhjeh8j20ek08cq36.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/2686062121/DCuCz4osW" target="_blank">6月29日 16:27</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/3auC5p" rel="nofollow" target="_blank">皮皮时光机</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991741751047362" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991741751047362" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991741751047362" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/njlnr" target="_blank" title="南京无事佬"><img class="user_avatar" src="topic_vote_base_data/538c3abcjw1e8qgp5bmzyj2050050aa8.jpg" alt="南京无事佬" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/njlnr" target="_blank" title="南京无事佬">南京无事佬</a><a href="http://club.weibo.com/intro" target="_blank"><span class="WB_ico_club feed_icon"></span></a><cite class="user_words">：“互联网+”约车方式倒逼南京出租车行业升级 文/无事佬 今天看到一则消息，南京出租车竟然也被逼的搞网约车了。最近南京多家出租汽车企业，与南京一公司合作，研发了“有滴打车”APP ...(发自<a target="_blank" href="http://weibo.com/n/%E5%BE%AE%E5%8D%9A%E6%A1%8C%E9%9D%A2">@微博桌面</a> <a href="http://t.cn/zjj9IWH" target="_blank">http://t.cn/zjj9IWH</a>）</cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/538c3abcjw1f5c45m1avuj20c818k4cx.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1401699004/DCu8biuGm" target="_blank">6月29日 15:12</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/e0WUS" rel="nofollow" target="_blank">微博桌面</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991722914407850" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991722914407850" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991722914407850" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/1649355924" target="_blank" title="英金海元昆"><img class="user_avatar" src="topic_vote_base_data/default_avatar_male_50.gif" alt="英金海元昆" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/1649355924" target="_blank" title="英金海元昆">英金海元昆</a><cite class="user_words">：昨天，南京本地研发的手机打车软件“有滴打车”正式上线。<a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a> <a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/624f2c94jw1f5c0uw5f74j204k03k3yd.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1649355924/DCtnSkvc3" target="_blank">6月29日 13:18</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1nDKmF" rel="nofollow" target="_blank">交汇点新闻</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991694204886471" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991694204886471" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991694204886471" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/1846495417" target="_blank" title="中国出租汽车"><img class="user_avatar" src="topic_vote_base_data/6e0f48b9jw8f4a9ygxbptj210w10wq6o.jpg" alt="中国出租汽车" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/1846495417" target="_blank" title="中国出租汽车">中国出租汽车</a><cite class="user_words">：记者体验“有滴打车”：叫车体验较好 南京官方打车平台！ <a href="http://t.cn/R5Q6jIR" target="_blank">http://t.cn/R5Q6jIR</a> <a href="http://t.cn/R2dLgK0" target="_blank">http://t.cn/R2dLgK0</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/6e0f48b9jw1f5c03tqhjnj20go0goq6p.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1846495417/DCtdjcrDG" target="_blank">6月29日 12:52</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/59EzIu" rel="nofollow" target="_blank">小米Note 顶配版</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991687652966184" title="">转
+发
+                                                                        
+                                                                        
+(1)
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991687652966184" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991687652966184" onclick="return false;" title="">评
+论
+                                                                        
+                                                                        
+(1)
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/1699894347" target="_blank" title="xcnhung"><img class="user_avatar" src="topic_vote_base_data/6552544bjw8es7k98lgmrj209d09dwem.jpg" alt="xcnhung" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/1699894347" target="_blank" title="xcnhung">xcnhung</a><cite class="user_words">：昨天，南京本地研发的手机打车软件“有滴打车”正式上线。<a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a> <a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/6552544bgw1f5bysxifbgj204k03kmx2.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/1699894347/DCsV1nJm7" target="_blank">6月29日 12:07</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1nDKmF" rel="nofollow" target="_blank">交汇点新闻</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991676315655895" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991676315655895" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991676315655895" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+                                                                <li class="feed_item S_separate_l">
+                                                        <div class="user_avatar_container ">
+                                                            <a class="user_avatar_link" href="http://weibo.com/u/3239716884" target="_blank" title="水中鱼3239716884"><img class="user_avatar" src="topic_vote_base_data/c11a2814jw1e8qgp5bmzyj2050050aa8.jpg" alt="水中鱼3239716884" width="50" height="50"></a>
+                                                                                                                    </div>
+                                                        <div class="weibo_content">
+                                                            <div class="weibo_text">
+                                                                <a class="user_name" href="http://weibo.com/u/3239716884" target="_blank" title="水中鱼3239716884">水中鱼3239716884</a><cite class="user_words">：昨天，南京本地研发的手机打车软件“有滴打车”正式上线。<a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a>汇早点｜南京本土约车软件上线,鼓励拼车可开票,不搞打车券 <a href="http://t.cn/R5QAM2G" target="_blank">http://t.cn/R5QAM2G</a></cite>
+                                                            </div>
+                                                                                                                        <div class="weibo_img_container">
+                                                                <img class="WB_big_cursor" src="topic_vote_base_data/c11a2814gw1f5bxlycmcoj204k03kgli.jpg" action-type="preview" alt="">
+                                                            </div>
+                                                                                                                        <div class="weibo_bottom">
+                                                                <div class="weibo_info S_text_l">
+                                                                    <a class="weibo_time" href="http://weibo.com/3239716884/DCsEg8FgE" target="_blank">6月29日 11:26</a><cite class="weibo_from">来自<a href="http://app.weibo.com/t/feed/1nDKmF" rel="nofollow" target="_blank">交汇点新闻</a></cite>
+                                                                </div>
+                                                                <div class="weibo_handle">
+                                                                    <a class="weibo_handler_a" href="#" onclick="return false;" action-type="forward" action-data="mid=3991665922065260" title="">转
+发
+                                                                        
+                                                                    </a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="favorite" action-data="mid=3991665922065260" onclick="return false;" title="">收藏</a><cite class="WB_vline">|</cite><a class="weibo_handler_a" href="#" action-type="comment" action-data="mid=3991665922065260" onclick="return false;" title="">评
+论
+                                                                        
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                                            </li>
+                                                                        
+                                                                        
+        </ul>
+                                                                                            </div>
+                                        </div>
+                                                                            </div>
+
+                                </div>
+                            </td>
+                                                    </tr>
+                    </tbody></table>
+                                    </div>
+                                <div class="bottom_part S_bg_l  S_border"><a class="bottom_part_link" target="_top" href="http://open.weibo.com/widget/weibotopic.php" title="">获取微博话题墙</a></div>
+                            </div>
+        </div>
+        <script src="topic_vote_base_data/theia_1_0.js" charset="utf-8"></script>
+                <script src="topic_vote_base_data/topicBase.js" charset="utf-8"></script><div node-type="outer" class="WB_tips_top" style="position: absolute; visibility: visible; display: none;"><div node-type="inner" class="bg"><!--temp start--><div class="tips_inner"><span class="WB_tipS_warn"></span><span class="WB_icon_txt">您的帐号尚未开通微博，<a href="http://weibo.com/signup/full_info.php?appsrc=6cm7D0&amp;backurl=http%3A%2F%2Fwidget.weibo.com%2Ftopics%2Ftopic_vote_base.php%3Fborder%3D1%26footbar%3D1%26width%3D1200%26height%3D599%26refer%3D1%26filter%3D0%26language%3Dzh_cn%26version%3Dbase%26dup%3D0%26antispam%3D0%26isOutTopicSearch%3D0%26top_mblog%3DD2itj2q6%26isshowright%3D0%26tag%3D%25E6%259C%2589%25E6%25BB%25B4%25E6%2589%2593%25E8%25BD%25A6%26og%3Dhttp%3A%2F%2Fwww.njtoyo.com%2FPage%2FSinglePage.aspx%3Fmid%3D10&amp;showlogo=0&amp;vsrc=weiboshow&amp;from=zw" target="_blank">立即开通</a></span><!--temp end--></div></div></div>
+        <!-- SUDA_CODE_START -->
+		<script type="text/javascript" charset="utf-8" src="topic_vote_base_data/suda.js"></script>
+		<!-- SUDA_CODE_END -->
+    
+
+<div class="WB_tips_smart WB_email" style="display: none;"><p class="tipsmt_title" node-type="suggestTitle">想用@提到谁</p><ul class="tipsmt_list" node-type="suggestWrap"></ul></div></body></html>
