@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -79,10 +79,12 @@
         <li style="display:inline-block;margin-right:12px;border-color:#DA0000;"><a style="font-weight:500;font-size:14px;color:#000000;cursor:pointer;display:inline-block;text-decoration:none;padding-top:15px;padding-right:12px;padding-bottom:0;padding-left:12px;border-top:4px solid transparent" href="#"><span>登录</span></a></li>
     </ul>
 </nav>
-<div id="container" style="height: 400px;width: 400px"></div>
+<div style="height: 260px;width: 100%;background: #0cc7dd"></div>
+<h1 style="margin-left: 30px">联系我们</h1>
+<div id="mapcontainer" style="float:right;height: 500px;width: 500px ;margin: 50px 100px 0px 0px"></div>
 <script>
-    var map = new BMap.Map("container");          // 创建地图实例
-    var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+    var map = new BMap.Map("mapcontainer");          // 创建地图实例
+    var point = new BMap.Point(110.344501,25.271983);  // 创建点坐标
     map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
     var marker = new BMap.Marker(point);        // 创建标注
     map.addOverlay(marker);                     // 将标注添加到地图中
@@ -91,5 +93,24 @@
     map.addControl(new BMap.OverviewMapControl());
     map.addControl(new BMap.MapTypeControl());
 </script>
+<div style="width: 400px;height: auto;margin:70px">
+    <span style="display: block;line-height: 3">
+    公司名称：广西塔西科技有限公司<br>
+
+    地址：广西桂林市七星区信息产业园 创新大厦A座B27号<br>
+
+    办公电话：0833——4235258<br>
+
+    电子邮箱:27383744@qq.com<br>
+
+    传真:5280000<br>
+
+    QQ:472873193<br>
+
+    微博:塔西微博官方号<br>
+
+    微信:塔西微信官方号<br>
+</span>
+</div>
 </body>
 </html>
