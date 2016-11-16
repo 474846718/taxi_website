@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="cn">
 <head>
+    <meta charset="UTF-8">
 </head>
 
 <body>
-<div class="full" style="box-sizing:border-box;background:rgba(0,0,0,0);;font: normal 16px/normal 微软雅黑; text-decoration: none; color:#404040;padding:0.25em 0.5em;word-break:break-all;overflow-y:hidden;">
+<script src="js/jquery.min.js"></script>
+<script>
 
-    <span class="O5C0" style="line-height:1.5;display:block;" width="100%" height="100%">公司名称：犍为县富翔汽车客运有限公司<br><br>地址：四川乐山市犍为县玉津镇漱玉路<br><br>办公电话：0833&mdash;&mdash;4235258<br><br>服务热线：0833&mdash;&mdash;2626111  2626222<br><br><br></span>
-
+    $(function () {
+        $(window).scroll(function () {
+            console.log('in');
+            var point=400;             //创建平滑点
+            var scrollPosition =$(window).scrollTop();//没次鼠标滚动获取scroll的上边距
+            console.log(scrollPosition);
+            if ( scrollPosition==point) {//到达创建平滑点
+                debugger;
+                var moved=$("#moved");
+                var movedH = moved.css("top").split("");
+                movedH.pop();//去除"px"子串
+                movedH.pop();
+                moved.css({"position": "fixed", "z-index": 1, "top":movedH.join("")-point+'px'});
+            }
+            console.log("out");
+        });
+    });
+</script>
+<div style="background: #e9733f none repeat scroll 0% 0%;  height: 500px; width: 100%; left: 0px; right: 0px; bottom: 0px; top: 0px;">
 </div>
+<div style="background: #e95562 none repeat scroll 0% 0%;  height: 500px; width: 100%; left: 0px; right: 0px; bottom: 0px; top: 0px;">
+</div>
+<div style="background: #6f8be9 none repeat scroll 0% 0%;  height: 500px; width: 100%; left: 0px; right: 0px; bottom: 0px; top: 0px;">
+</div>
+<div id="moved" style="position:absolute;height: 100px;width: 100px;background: #19c9ff;left: 100px;top: 500px;"></div>
+
 </body>
 </html>
