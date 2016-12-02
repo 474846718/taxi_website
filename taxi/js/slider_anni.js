@@ -8,7 +8,7 @@ $(function () {
 	$("#slider #next_pg,#slider #pre_pg").hover(function () {
 		$(this).stop(true,false).animate({"opacity":"0.5"},300);
 	},function () {
-		$(this).stop(true,false).animate({"opacity":"0.2"},300);
+		$(this).stop(true,false).animate({"opacity":"0.8"},300);
 	});
 	$("#slider #pre_pg").click(function() {
 		index -= 1;
@@ -22,7 +22,7 @@ $(function () {
 		showPics(index);
 	});
 	function showPics(index) {//普通切换
-		span_mch.css("opacity","0.2").eq(index).css("opacity","0.8");//切换span颜色
+		span_mch.css("opacity","0.5").eq(index).css("opacity","0.8");//切换span颜色
 		$("#slider ul").stop(true,false).animate({"left":-index*$("#slider").width()},300); //通过animate()调整ul元素滚动到计算出的position
 	}
 });

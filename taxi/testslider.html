@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #slider_container{
+            width:100%;
+            height:500px;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/drawSlider.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var slider=new Slider("slider_container");
+            a=[];
+            a[0]='img/home/cooperrate2.jpg';
+            a[2]='-';
+            slider.addContents(a);
+        });
+    </script>
+</head>
+<body style="margin:0;">
+<div id="slider_container">
+    <!--<div id="next_pg" style="width:70px; height:70px; position:absolute;left:0px;top:260px; cursor:pointer;opacity:0.5 "><img src="img/index/right.png" height="70px" width="70px"></div>-->
+    <!--<div id="pre_pg" style="width:70px; height:70px; position:absolute;right:0px;top:260px; cursor:pointer;opacity:0.5 "><img src="img/index/left.png" height="70px" width="70px"></div>-->
+</div>
+</body>
+</html>

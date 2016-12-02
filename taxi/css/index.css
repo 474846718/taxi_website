@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+}
+nav{
+    width:100%;
+    height:60px;
+    overflow: hidden;
+    font-size:14px;
+    font-weight:400;
+    background-color:brown;
+    position:fixed;
+    top:0px;
+    z-index:1
+}
+
+#hamburger{
+    cursor:pointer;
+    float: left;
+}
+#hamburger svg{
+    width:24px;
+    height:24px;
+    font-size:20px;
+    margin-left:20px;
+    margin-right:60px;
+    margin-top:20px
+}
+#logo{
+    font-weight:200;
+    font-size:18px;
+    margin-top:13px;
+    float:left;
+}
+#topbar{
+    font-size:14px;
+    font-weight:600;
+    display:inline-block;
+    margin-top:0;
+    margin-left:100px;
+    padding-left:10px;
+    float:left;
+}
+#topbar li{
+    display:inline-block;
+    margin-right:12px;
+}
+#topbar li a{
+    font-weight: 400;
+    font-size: 17px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border-top: 4px solid transparent
+}
+#help{
+    font-size:14px;
+    text-transform:uppercase;
+    font-weight:600;
+    display:inline-block;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:0;
+    padding-left:0;
+    float:right;
+}
+#help li{
+    display:inline-block;
+    margin-right:12px;
+    border-color:#DA0000;
+}
+#help li a{
+    font-weight:500;
+    font-size:14px;
+    color:#000000;
+    cursor:pointer;
+    display:inline-block;
+    text-decoration:none;
+    padding-top:15px;
+    padding-right:12px;
+    padding-bottom:0;
+    padding-left:12px;
+    border-top:4px solid transparent;
+}
+footer{
+    background-color:#252525;
+}
+footer p{
+    margin:0px 30px;
+    padding:30px;
+    text-align:center;
+    color: #c6cdc7
+}
