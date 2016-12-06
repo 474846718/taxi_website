@@ -1,0 +1,38 @@
+#content{
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+#content li{
+    display: block;
+    height: 500px;
+    width: 100%;
+}
+#content li .text{
+    margin-right: 50px;
+    margin-top: 50px;
+    text-align:left ;
+    width:700px;
+    height: 400px
+}
+#content li .text h3{
+    font-size: 50px;
+    font-weight: 200;
+    margin-top:50px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    border-left:5px solid transparent;
+    border-left-color: #1f2228;
+}
+#content li .text span{
+    font-size: x-large;
+    font-weight:100 ;
+    line-height:40px;
+}
+#content li .img{
+    margin-left:50px;
+    margin-top: 100px;
+    text-align:center;
+    width: 400px;
+    height: 300px;
+    float: left;
+}

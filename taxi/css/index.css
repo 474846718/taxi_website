@@ -10,25 +10,25 @@ nav{
     background-color:brown;
     position:fixed;
     top:0px;
-    z-index:1
+    z-index:1;
 }
 
 #hamburger{
+    width: 24px;
+    height: 24px;
+    padding: 23px 10px 0;
+    display:block;
+    background-image:url(../img/index/hamburge.svg);
     cursor:pointer;
     float: left;
 }
-#hamburger svg{
-    width:24px;
-    height:24px;
-    font-size:20px;
-    margin-left:20px;
-    margin-right:60px;
-    margin-top:20px
-}
 #logo{
+    width: 100px;
+    height: 50px;
+    margin: 20px 50px;
     font-weight:200;
     font-size:18px;
-    margin-top:13px;
+    background-image:url(../img/index/logo.svg);
     float:left;
 }
 #topbar{
@@ -36,7 +36,7 @@ nav{
     font-weight:600;
     display:inline-block;
     margin-top:0;
-    margin-left:100px;
+    margin-left:50px;
     padding-left:10px;
     float:left;
 }

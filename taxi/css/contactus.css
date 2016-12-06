@@ -1,0 +1,63 @@
+#top_img{
+    height: 460px;
+    width: 100%;
+    background-image: url(../img/taxi.jpg);
+    background-size: 100% 100%
+}
+#title{
+    height: auto;
+    width:auto;
+    background-color: #9d2d2d;
+}
+#title h1{
+    margin:auto 30px 0px 30px;
+    font-weight: 400;
+    border-bottom: 4px solid #383838;
+}
+#mapcontainer{
+    height:650px;
+    width:100%;
+}
+
+#panel{
+    position: absolute;
+    background-color: #952b2b;
+    width: 600px;
+    height: 480px;
+    top: 600px;
+    left: 100px;
+    opacity: 0.95;
+}
+
+.panel_tag{
+    float:left;
+    width:270px;
+    height: 100px;
+    margin:10px 15px;
+}
+.panel_tag-img{
+    float:left;
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
+    background-size: 100% 100%;
+}
+.panel_tag-content{
+    float: left;
+    height:100%;
+    width:210px;
+    border-bottom: 1px solid #5d5d5d
+}
+.panel_tag-content-title{
+    padding-left:20px ;
+    font-size: 20px;
+    font-weight:300;
+    color: #1f2228;
+}
+.panel_tag-content-phrase{
+    display:block ;
+    margin-top: 10px;
+    padding-left:15px;
+    font-weight:200;
+    color: #c3c3c3
+}
