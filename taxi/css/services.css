@@ -1,23 +1,21 @@
 #top_img{
     height:450px;
     width:100%;
-    background:url(../img/taxi.jpg) repeat
+    background:url(../img/common/taxi.jpg) repeat
 }
 #data_analyze{
     background: #252525;
-    height: 500px;
+    height: auto;
     width: 100%;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    top: 0px;
+    text-align: center;
+
 }
 #data_analyze > div{
-    float:left;
+    display: inline-block;
     width: 600px;
     height: 450px;
     color: #777d7d;
-    margin: 50px 0px 0px 30px;
+    margin: 50px 15px;
 }
 #data_analyze div p{
     padding-left: 20px;
@@ -86,8 +84,9 @@
     position: absolute;
     height: 480px;
     width: 250px;
-    top: 1018px;
+    top: 1060px;
     left: 200px;
     background-image: url(../img/services/phone.jpg);
     background-size:100% 100%;
 }
+

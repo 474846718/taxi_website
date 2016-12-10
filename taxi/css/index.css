@@ -4,45 +4,43 @@ body{
 nav{
     width:100%;
     height:60px;
-    overflow: hidden;
     font-size:14px;
     font-weight:400;
-    background-color:brown;
+    background-color:#35c156;
     position:fixed;
     top:0px;
     z-index:1;
 }
 
 #hamburger{
-    width: 24px;
-    height: 24px;
-    padding: 23px 10px 0;
+    width: 60px;
+    height: 60px;
     display:block;
     background-image:url(../img/index/hamburge.svg);
     cursor:pointer;
     float: left;
+    position: relative;
+    top:-60px;
 }
 #logo{
     width: 100px;
-    height: 50px;
-    margin: 20px 50px;
-    font-weight:200;
-    font-size:18px;
+    height: 60px;
     background-image:url(../img/index/logo.svg);
     float:left;
+    position: relative;
+    top:-60px;
 }
 #topbar{
+    height: 60px;
+    width: 567px;
+    margin: auto;
+    padding-left: 0;
     font-size:14px;
     font-weight:600;
-    display:inline-block;
-    margin-top:0;
-    margin-left:50px;
-    padding-left:10px;
-    float:left;
 }
 #topbar li{
+    width: 92px;
     display:inline-block;
-    margin-right:12px;
 }
 #topbar li a{
     font-weight: 400;
@@ -61,16 +59,18 @@ nav{
     text-transform:uppercase;
     font-weight:600;
     display:inline-block;
+    height: 60px;
     margin-top:0;
     margin-bottom:0;
     margin-left:0;
     padding-left:0;
     float:right;
+    position: relative;
+    top: -60px;
 }
 #help li{
     display:inline-block;
     margin-right:12px;
-    border-color:#DA0000;
 }
 #help li a{
     font-weight:500;
@@ -93,4 +93,23 @@ footer p{
     padding:30px;
     text-align:center;
     color: #c6cdc7
+}
+
+@media only screen and (max-width: 1200px){
+    #topbar{
+        display: none;
+    }
+    #logo{
+        position: static;
+        display: block;
+        float: none;
+        margin:auto;
+        top:0;
+    }
+    #hamburger{
+        top:0;
+    }
+    #help{
+        top:-60px;
+    }
 }

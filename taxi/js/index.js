@@ -2,7 +2,9 @@
  * Created by nico on 12/5/16.
  */
 $(function () {
+    var topbar=$('#topbar');
     var section=$('section');
+
     section.load("home.html");
     $('#topbar a').each(function (i,n) {
         var node=$(n);

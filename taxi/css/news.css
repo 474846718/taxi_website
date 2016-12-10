@@ -1,0 +1,126 @@
+#allnews{
+    padding-top:100px ;
+    margin: auto;
+    width:100%;
+    height:auto;
+    text-align: center;
+}
+
+#article_search_bar{
+    width:850px;
+    height:60px;
+    margin:0px auto 0px auto;
+    background: #f2f6f2;
+}
+
+#cotagery{
+    float: left;
+}
+
+#cotagery span{
+    display: inline-block;
+    padding: 20px;
+
+}
+
+#article_search_bar form{
+    float: right;
+    padding-top:20px;
+}
+
+#article_search_bar form input{
+    margin-right:10px;
+    padding: 0 5px ;
+    background: #f2f6f2 url(../img/news/search1.png) right no-repeat;
+    border: none;
+    border-bottom: 1px solid brown;
+}
+
+#sort{
+    float: right;
+}
+#sort span{
+    display: inline-block;
+    padding: 20px 10px;
+}
+
+#sort a{
+    text-decoration: none;
+    color: #1f2228;
+}
+
+.article_frame{
+    display: inline-block;
+    width:550px;
+    height: 250px;
+    margin:10px;
+    background: #c7cdc6;
+    border: 2px solid #ffffff;
+}
+.article_frame-img{
+    float: left;
+    margin-top:20px;
+    margin-left: 2px;
+    width:270px;
+    height:180px;
+    background-size: 100% 100%;
+}
+.article_frame-article{
+    float: left;
+    width: 278px;
+    height: auto;
+}
+.article_frame-article-title{
+    display:block;
+    margin-left:20px;
+    font-size:18px;
+    color:#333333;
+}
+.article_frame-article-phrase{
+    color: #555555;
+    font-size: 14px;
+    font-weight: 300;
+    height: 130px;
+    margin: 20px 20px 0;
+    width: auto;
+}
+.article_frame-article-arrow{
+    margin-left:5px;
+    float:right;
+    outline-width: 20px;
+    font-weight: 900;
+}
+.article_frame-article a{
+    text-decoration: none;
+    float: right;
+    margin-right: 0px;
+    color: #444
+}
+.article_frame-article-date{
+    margin-left:20px;
+    font-size: 14px;
+    font-weight: 100;
+}
+@media only screen and (max-width: 860px){
+    #article_search_bar{
+        background-color: #f2f6f2;
+        width:100%;
+        height:auto;
+        margin:0;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .article_frame{
+        width:100%;
+        height:auto;
+        margin:0;
+    }
+    .article_frame-img{
+        display: none;
+    }
+    .article_frame-article{
+        width: 100%;
+        height: auto;
+    }
+}

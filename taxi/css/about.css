@@ -1,6 +1,6 @@
 #content{
-    padding-left: 0px;
-    margin-bottom: 0px;
+    padding-left: 0;
+    margin: 0;
 }
 #content li{
     display: block;
@@ -8,8 +8,7 @@
     width: 100%;
 }
 #content li .text{
-    margin-right: 50px;
-    margin-top: 50px;
+    margin: 50px;
     text-align:left ;
     width:700px;
     height: 400px
@@ -35,4 +34,12 @@
     width: 400px;
     height: 300px;
     float: left;
+}
+
+@media only screen and (max-width:800px) {
+    #content li .text{
+        height: auto;
+        width: 87.5%;
+        margin: 6.25% ;
+    }
 }

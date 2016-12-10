@@ -2,115 +2,25 @@
 <html lang="cn">
 <head>
     <meta charset="UTF-8">
-    <style>
-        #topbar li{
-            display:inline-block;
-            margin-right:12px;
-        }
-        #topbar li a{
-            font-weight: 400;
-            font-size: 17px;
-            text-decoration: none;
-            color: #000000;
-            cursor: pointer;
-            display: inline-block;
-            padding-top: 12px;
-            padding-right: 12px;
-            padding-left: 12px;
-            border-top: 4px solid transparent;
-        }
-        #help li{
-            display:inline-block;
-            margin-right:12px;
-            border-color:#DA0000;
-        }
-        #help li a{
-            font-weight:500;
-            font-size:14px;
-            color:#000000;
-            cursor:pointer;
-            display:inline-block;
-            text-decoration:none;
-            padding-top:15px;
-            padding-right:12px;
-            padding-bottom:0;
-            padding-left:12px;
-            border-top:4px solid transparent;
-        }
-        #article_search_bar span{
-            display: inline-block;
-            padding: 20px;
-
-        }
-        .article_frame{
-            float:left;
-            width:550px;
-            height: 250px;
-            margin:10px;
-            background: #c7cdc6;
-            border: 2px solid #ffffff;
-        }
-        .article_frame-img{
-            float: left;
-            margin-top:20px;
-            width:270px;
-            height:180px;
-            background: #35d2ab;
-        }
-        .article_frame-article{
-            float: left;
-            width: 280px;
-            height: auto;
-        }
-        .article_frame-article-title{
-            display:block;
-            margin-left:20px;
-            font-size:18px;
-            color:#333333;
-        }
-        .article_frame-article-phrase{
-            color: #555555;
-            font-size: 14px;
-            font-weight: 300;
-            height: 130px;
-            margin: 20px 20px 0;
-            width: auto;
-        }
-        .article_frame-article-arrow{
-            margin-left:5px;
-            float:right;
-            outline-width: 20px;
-            font-weight: 900;
-        }
-        .article_frame-article a{
-            text-decoration: none;
-            float: right;
-            margin-right: 0px;
-            color: #444
-        }
-        .article_frame-article-date{
-            margin-left:20px;
-            font-size: 14px;
-            font-weight: 100;
-        }
-    </style>
+    <style>@import "css/news.css";</style>
 </head>
 <body>
-<section style="display:inline-block;margin-top:100px;margin-left:20px;width:auto;height:auto;">
-    <div id="article_search_bar" style="width:850px;height:60px;margin:0px auto 0px auto; background: #f2f6f2">
-        <span>全部</span>
-        <form style="float: right;padding-top:20px ">
-            <input style="margin-right:10px;background: #f2f6f2;border: none;border-bottom: 1px solid brown;">
-            <img src="">
+<section id="allnews">
+    <div id="article_search_bar">
+        <div id="cotagery">
+            <span>全部</span>
+        </div>
+        <form>
+            <input>
         </form>
-        <div style="float: right;">
-            <span>排序：</span><span><a style="text-decoration: none;color: #1f2228" href="#">热度</a></span><span><a style="text-decoration: none;color: #1f2228" href="#">时间</a></span>
+        <div id="sort">
+            <span>排序：</span>
+            <span><a href="#">热度</a></span>
+            <span><a href="#">时间</a></span>
         </div>
     </div>
-    <div class="article_frame "style="clear: left">
-        <div class="article_frame-img">
-            <img src="img/news/new1.jpeg" width="270px" height="180px"/>
-        </div>
+    <div class="article_frame ">
+        <div class="article_frame-img" style="background-image: url(img/news/new1.jpeg)"></div>
         <div class="article_frame-article">
             <span class="article_frame-article-title" >塔锡的网约车市场分析</span>
             <p class="article_frame-article-phrase" >难题一：网络租车行业的快速发展，不断地蚕食出租车市场份额，双方的竞争进一步推动了传统出租车行业的改革。专车的出现进一步压榨了出租车市场，许多地方都因此发生了出租车与专车的冲突...</p>
@@ -120,9 +30,37 @@
         </div>
     </div>
     <div class="article_frame ">
-        <div class="article_frame-img">
-            <img src="img/news/new2.jpeg" width="270px" height="180px"/>
+        <div class="article_frame-img" style="background-image: url(img/news/new2.jpeg)"></div>
+        <div class="article_frame-article">
+            <span class="article_frame-article-title" >行业政策风向新动态</span>
+            <p class="article_frame-article-phrase" >交通运输部党组成员兼运输服务司司长刘小明在接受中国新闻周刊采访时表示，传统出租车行业问题的问题概括起来主要是：发展定位不清、供需长期失衡...</p>
+            <span class="article_frame-article-arrow">&gt;</span>
+            <a href="#" style="">阅读全文</a>
+            <span class="article_frame-article-date">2016-11-21</span>
         </div>
+    </div>
+    <div class="article_frame ">
+        <div class="article_frame-img" style="background-image: url(img/news/new1.jpeg)"></div>
+        <div class="article_frame-article">
+            <span class="article_frame-article-title" >塔锡的网约车市场分析</span>
+            <p class="article_frame-article-phrase" >难题一：网络租车行业的快速发展，不断地蚕食出租车市场份额，双方的竞争进一步推动了传统出租车行业的改革。专车的出现进一步压榨了出租车市场，许多地方都因此发生了出租车与专车的冲突...</p>
+            <span class="article_frame-article-arrow">&gt;</span>
+            <a href="#" style="">阅读全文</a>
+            <span class="article_frame-article-date">2016-11-21</span>
+        </div>
+    </div>
+    <div class="article_frame ">
+        <div class="article_frame-img" style="background-image: url(img/news/new2.jpeg)"></div>
+        <div class="article_frame-article">
+            <span class="article_frame-article-title" >行业政策风向新动态</span>
+            <p class="article_frame-article-phrase" >交通运输部党组成员兼运输服务司司长刘小明在接受中国新闻周刊采访时表示，传统出租车行业问题的问题概括起来主要是：发展定位不清、供需长期失衡...</p>
+            <span class="article_frame-article-arrow">&gt;</span>
+            <a href="#" style="">阅读全文</a>
+            <span class="article_frame-article-date">2016-11-21</span>
+        </div>
+    </div>
+    <div class="article_frame ">
+        <div class="article_frame-img" style="background-image: url(img/news/new2.jpeg)"></div>
         <div class="article_frame-article">
             <span class="article_frame-article-title" >行业政策风向新动态</span>
             <p class="article_frame-article-phrase" >交通运输部党组成员兼运输服务司司长刘小明在接受中国新闻周刊采访时表示，传统出租车行业问题的问题概括起来主要是：发展定位不清、供需长期失衡...</p>
