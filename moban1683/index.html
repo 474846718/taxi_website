@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!--animate-->
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+<link href='http://fonts.googleapis.com/css?family=Kanit:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script src="js/responsiveslides.min.js"></script>
+
+</head>
+<body>
+<!-- header -->
+<div class="header wow zoomIn w3l">
+	<div class="container">
+		<div class="header_left">
+			<ul>
+				<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@example.com</a></li>
+				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+123 456 7890</li>
+			</ul>
+		</div>
+		<div class="header_right">
+			<ul>
+				<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+				<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+				<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
+				<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+				<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header -->
+<!-- banner -->
+<div class="banner w3ls">
+	<div class="container">
+		<div class="header-nav wow fadeInUp animated" data-wow-delay=".5s">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header logo">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<h1>
+									<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=" " /></a>
+								</h1>
+								
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+								<nav class="cl-effect-1">
+									<ul class="nav navbar-nav ">
+										<li><a class="active" href="index.html">Home</a></li>
+										<li><a href="about.html">About</a></li>
+										<li><a href="codes.html">Short Codes</a></li>
+										<li><a href="gallery.html">Designs</a></li>
+										<li><a href="services.html">Services</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</nav>
+				</div>
+				<!-- /navbar-collapse -->
+			</nav>
+		</div>
+		<div class="clearfix"></div>
+		<div class="banner-info wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
+			<div  id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="col-md-5 ban-left">
+							<img src="images/p10.jpg" alt=" "/>
+						</div>
+						<div class="col-md-7 ban-right">
+							<h3>We Design Develop and Deliver Using 100% Natural Materials</h3>
+							<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+							odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+							<a class="hvr-rectangle-out" href="about.html">See More About Us</a>
+						</div>
+						<div class="clearfix"></div>
+					</li>
+					<li>
+						<div class="col-md-5 ban-left">
+							<img src="images/p3.jpg" alt=" "/>
+						</div>
+						<div class="col-md-7 ban-right">
+							<h3>We Have Best Design Experts With Good Ideas In Designing</h3>
+							<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+							odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+							<a class="hvr-rectangle-out" href="about.html">See More About Us</a>
+						</div>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						 // Slideshow 4
+						$("#slider3").responsiveSlides({
+							auto: true,
+							pager: false,
+							nav: true,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+						$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+							}
+							});
+						});
+			</script>
+
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+<!-- about -->
+<div class="welcome all_pad wthree">
+	<div class="container">
+		<h3 class="title">Welcome To Royal Furnish<span></span></h3>
+		<div class="wel-grids">
+			<div class="col-md-6 wel-grid-one bor_one text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+				<div class="wel-img">
+					<img src="images/111.png" alt=" " />
+				</div>
+				<h4>voluptatem</h4>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+				aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+			</div>
+			<div class="col-md-6 wel-grid-one bor_two text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
+				<div class="wel-img">
+					<img src="images/222.png" alt=" " />
+				</div>
+				<h4>consequntur</h4>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+				aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+			</div>
+			<div class="col-md-6 wel-grid-one bor_three text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+				<div class="wel-img">
+					<img src="images/333.png" alt=" " />
+				</div>
+				<h4>aspernatur</h4>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+				aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+			</div>
+			<div class="col-md-6 wel-grid-one bor_four text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
+				<div class="wel-img">
+					<img src="images/444.png" alt=" " />
+				</div>
+				<h4>doloremque </h4>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+				aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="dot">
+				<span></span>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //about -->
+<!-- content -->
+<div class="content all_pad agile">
+	<div class="container">
+		<h3 class="title">Some Facts About Us<span></span></h3>
+		<div class="content_grids">
+			<div class="col-md-3 capabil-grid wow fadeInDown animated animated text-center" data-wow-delay="0.4s">
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5700' data-delay='.5' data-increment="1">5700</div>
+				<p>Winning Awards</p>	
+			</div>
+			<div class="col-md-3 capabil-grid mar-top wow fadeInUp animated animated text-center" data-wow-delay="0.4s">
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="1">1700</div>
+				<p>Clients Worked With</p>	
+			</div>
+			<div class="col-md-3 capabil-grid mar-top wow fadeInDown animated animated text-center" data-wow-delay="0.4s">
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='9000' data-delay='.5' data-increment="1">9000</div>				
+				<p>Completed Projects</p>
+			</div>
+			<div class="col-md-3 capabil-grid wow fadeInUp animated animated text-center" data-wow-delay="0.4s">
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2500' data-delay='.5' data-increment="1">2500</div>
+				<p>Likes</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //content -->
+<!-- content -->
+<div class="process all_pad agileits">
+	<div class="container">
+		<h3 class="title">Our Work Process<span></span></h3>
+		<div class="process_grids wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="0s">
+			<div class="col-md-5 process_left">
+				<div class="port-2 effect-1">
+                	<div class="image-box">
+                    	<img class="img-responsive" src="images/p6.jpg" alt="Image-1">
+                    </div>
+                    <div class="text-desc">
+                    	<h4>Royal Furnish</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+			</div>
+			<div class="col-md-7 process_right">
+				<h2>consectetur adipiscing</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div class="pro_grids">	
+					<div class="col-md-3 pro_left pro_spa text-center">
+						<h5>1</h5>
+						<h6>Planning</h6>
+					</div>
+					<div class="col-md-3 pro_left pro_spa text-center">
+						<h5>2</h5>
+						<h6>Analysis</h6>
+					</div>
+					<div class="col-md-3 pro_left pro_spa text-center">
+						<h5>3</h5>
+						<h6>Design</h6>
+					</div>
+					<div class="col-md-3 pro_left text-center">
+						<h5>4</h5>
+						<h6>Implementation</h6>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>	
+<!-- //process -->
+<!-- feed -->
+<div class="feed w3 all_pad wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+	<div class="container">
+		<h3 class="title">Clients Feedback<span></span></h3>
+		<div class="flex-slider">
+			<ul id="flexiselDemo1">			
+				<li>
+					<div class="laptop">
+						<div class="col-md-4 team-left">
+							<img class="img-responsive" src="images/team1.jpg" alt=" " />
+						</div>
+						<div class="col-md-8 team-right">
+							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+								adipisci velit, sed quia non numquam.</p>
+							<h5>Federica</h5>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li>
+					<div class="laptop">
+						<div class="col-md-4 team-left">
+							<img class="img-responsive" src="images/team4.jpg" alt=" " />
+						</div>
+						<div class="col-md-8 team-right">
+							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+								adipisci velit, sed quia non numquam.</p>
+							<h5>Thompson</h5>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+			<script type="text/javascript">
+							$(window).load(function() {
+								$("#flexiselDemo1").flexisel({
+									visibleItems: 2,
+									animationSpeed: 1000,
+									autoPlay: true,
+									autoPlaySpeed: 3000,    		
+									pauseOnHover: true,
+									enableResponsiveBreakpoints: true,
+									responsiveBreakpoints: { 
+										portrait: { 
+											changePoint:480,
+											visibleItems: 1
+										}, 
+										landscape: { 
+											changePoint:640,
+											visibleItems: 1
+										},
+										tablet: { 
+											changePoint:991,
+											visibleItems: 1
+										}
+									}
+								});
+								
+							});
+			</script>
+			<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+		</div>
+	</div>
+</div>		
+<!-- //feed -->
+<!-- contact -->
+<div class="contact w3agile wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="0s">
+	<div class="container">
+		<h3 class="title">Get In Touch<span></span></h3>
+		<div class="contact_grids">
+			<form action="#" method="post">
+				<div class="col-md-6 contact_left">
+					<div class="cont_bor">
+						<i class="glyphicon glyphicon-user"> </i><input type="text" value="Name" name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+						<div class="clearfix"></div>
+					</div>
+					<div class="cont_bor">
+						<i class="glyphicon glyphicon-envelope"> </i><input type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<div class="clearfix"></div>
+					</div>
+					<div class="cont_bor">
+						<i class="glyphicon glyphicon-earphone"></i>  <input type="text" value="Mobile" name="Mobile" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile';}" required="">					
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-6 contact_right">
+					<div class="cont_bor">
+						<i class="glyphicon glyphicon-globe"></i><input type="text" value="Website" name="Website" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Website';}" required="">
+						<div class="clearfix"></div>
+					</div>
+					<div class="cont_bor">
+						<i class="glyphicon glyphicon-edit"></i><textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+						<div class="clearfix"></div>
+					</div>
+					<input type="submit" value="Submit" >
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</form>
+		</div>
+		<div class="footer agileinfo text-center">
+			<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+		</div>	
+	</div>
+</div>
+<!-- //contact -->
+
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+</body>
+</html>

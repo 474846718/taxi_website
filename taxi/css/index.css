@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: "Open Sans",Arial,sans-serif;
 }
 nav{
     width:100%;
@@ -12,11 +13,13 @@ nav{
     z-index:1;
 }
 
-#hamburger{
+#menu{
     width: 60px;
     height: 60px;
     display:block;
-    background-image:url(../img/index/hamburge.svg);
+    background-image:url(../img/index/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
     cursor:pointer;
     float: left;
     position: relative;
@@ -25,14 +28,18 @@ nav{
 #logo{
     width: 100px;
     height: 60px;
-    background-image:url(../img/index/logo.svg);
+    margin-left: 100px;
+    background-image:url(../img/index/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     float:left;
     position: relative;
     top:-60px;
 }
 #topbar{
     height: 60px;
-    width: 567px;
+    width: 572px;
     margin: auto;
     padding-left: 0;
     font-size:14px;
@@ -54,7 +61,7 @@ nav{
     padding-left: 12px;
     border-top: 4px solid transparent
 }
-#help{
+#right_topbar{
     font-size:14px;
     text-transform:uppercase;
     font-weight:600;
@@ -68,11 +75,11 @@ nav{
     position: relative;
     top: -60px;
 }
-#help li{
+#right_topbar li{
     display:inline-block;
     margin-right:12px;
 }
-#help li a{
+#right_topbar li a{
     font-weight:500;
     font-size:14px;
     color:#000000;
@@ -85,6 +92,11 @@ nav{
     padding-left:12px;
     border-top:4px solid transparent;
 }
+
+section{
+    display: none;;
+}
+
 footer{
     background-color:#252525;
 }
@@ -93,6 +105,65 @@ footer p{
     padding:30px;
     text-align:center;
     color: #c6cdc7
+}
+
+#side_menu{
+    height: 100%;
+    width: 450px;
+    position:fixed;
+    z-index:2;
+    top: 60px;
+    left:0px;
+    background-color: #333333;
+}
+
+#side_menu > div{
+    width: 100%;
+    height: 60px;
+    background-color: #252525
+}
+
+#side_menu ul{
+    margin: 0;
+    padding:35px;
+    color:white;
+    list-style: none;
+}
+
+#side_menu ul li{
+    border-bottom: 1px solid #4b4b4b;
+    width: 100%;
+    height: 60px;
+}
+#side_menu ul li a{
+    display: inline-block;
+    width: 100%;
+    color: white;
+    line-height: 60px;
+    text-decoration: none;
+}
+#side_menu ul li a span{
+    background-image: url("../img/index/right_arrow.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    float: right;
+    height: 60px;
+    width: 4px;
+}
+
+
+
+@media  only screen and (max-height:496px){
+    #side_menu {
+        overflow-y: scroll;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #side_menu{
+        top: 60px;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 1200px){
@@ -106,10 +177,10 @@ footer p{
         margin:auto;
         top:0;
     }
-    #hamburger{
+    #menu{
         top:0;
     }
-    #help{
+    #right_topbar{
         top:-60px;
     }
 }

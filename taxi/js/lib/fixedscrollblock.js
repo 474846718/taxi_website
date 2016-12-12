@@ -8,7 +8,6 @@ function FixedScrollBlock(scrollBlock,fixedBigan,fixedEnd) {
     var topWhenAbsoluteEnd=fixedEnd+topWhenFixed;
     $(window).scroll(function () {
         var scrollPosition = $(window).scrollTop();//没次鼠标滚动获取scroll的上边距
-        console.log(scrollPosition);
         if(scrollPosition <= fixedBigan){
             scrollBlock.css('position', 'absolute');
             scrollBlock.css('top',topWhenAbsoluteBegin);//

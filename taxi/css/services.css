@@ -43,32 +43,31 @@
     font-size: 30px;
     font-weight: 100;
     height: auto;
-    margin:200px 100px 0px 0px;
-    width: 600px;
+    margin:200px 7.745933% 0px 0px;
+    width: 46.4756%;
     color: #2d2d2d;
 }
 #secure{
+    text-align: center;
     background: #f7f8f2;
     width: 100%;
-    height: 600px;
-}
-
-#secure > div{
-    width: 950px;
-    height:550px;
-    margin:auto
+    height: auto;
 }
 #secure article{
+    display: inline-block;
     background-color: #4ab73f;
     margin: 10px;
     text-align: center;
+    vertical-align:top;
     width: 400px;
     height: auto;
 }
-.secure-content-img{
-    text-align: center;
+#secure article div{
     width:400px;
-    height:300px
+    height:300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 #secure article p{
     color: #4b4b4b;
@@ -85,8 +84,29 @@
     height: 480px;
     width: 250px;
     top: 1060px;
-    left: 200px;
+    left: 15.491867%;
     background-image: url(../img/services/phone.jpg);
     background-size:100% 100%;
 }
+@media only screen and (max-width: 1289px){
+    #moved{
+        display: none;
+    }
+}
+@media only screen and (max-width: 950px){
+    #secure >div{
+        width: 100%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 640px) {
+    #data_analyze div{
+        width: 100%;
+        height: auto;
+    }
+    .phone_scroll_block p{
+        margin-top: 33.333333%;
+        font-size:25px ;
+    }
 
+}

@@ -8,5 +8,4 @@
         backpic[1]='img/home/cooperrate2.jpg';
         backpic[2]='img/home/driver.jpg';
         slider.addContents(backpic);
-        console.log('hello');
     });
