@@ -49,35 +49,28 @@
 }
 #secure{
     text-align: center;
-    background: #f7f8f2;
+    background: #fafafa;
     width: 100%;
     height: auto;
 }
 #secure article{
     display: inline-block;
-    background-color: #4ab73f;
-    margin: 10px;
-    text-align: center;
-    vertical-align:top;
-    width: 400px;
+    text-align: left;
+    margin: 50px;
+    width: 250px;
     height: auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
 }
 #secure article div{
-    width:400px;
-    height:300px;
+    height:200px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 #secure article p{
-    color: #4b4b4b;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 300;
-    height: auto;
-    line-height: 30px;
-    text-align: left;
-    width: 350px;
+    color: #292929;
+    width: 100%;
 }
 #moved{
     position: absolute;

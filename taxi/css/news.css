@@ -55,7 +55,8 @@
     height: 250px;
     margin:10px;
     background: #c7cdc6;
-    border: 2px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
 }
 .article_frame-img{
     float: left;
